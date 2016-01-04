@@ -16,6 +16,8 @@ SOURCES += main.cpp\
         mainwindow.cpp
 
 HEADERS  += mainwindow.h \
-    csvrow.h
+    csvrow.h \
+    pose.h \
+    heads.h
 
 FORMS    += mainwindow.ui
