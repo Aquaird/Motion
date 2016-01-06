@@ -1,14 +1,28 @@
+#include <QtWidgets>
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "glwidget.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    connect(ui->widget, SIGNAL(xRotationChanged(int)), ui->rotXSlider, SLOT(setValue(int)));
+    connect(ui->widget, SIGNAL(yRotationChanged(int)), ui->rotYSlider, SLOT(setValue(int)));
+    connect(ui->widget, SIGNAL(zRotationChanged(int)), ui->rotZSlider, SLOT(setValue(int)));
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::keyPressEvent(QKeyEvent *e)
+{
+    if(e->key() ==Qt::Key_Escape)
+        close();
+    else
+        QWidget::keyPressEvent(e);
 }

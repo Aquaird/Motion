@@ -1,7 +1,7 @@
 #ifndef CSVROW
 #define CSVROW
 
-#endif // CSVROW
+
 
 
 #include "heads.h"
@@ -9,7 +9,7 @@
 class CSVRow
 {
 public:
-    std::string const& operator[](std::size_t index) const
+    double const& operator[](std::size_t index) const
     {
         return m_data[index];
     }
@@ -33,7 +33,7 @@ public:
         }
     }
 private:
-    std::vector<int> m_data;
+    std::vector<double> m_data;
 
 };
 
@@ -53,3 +53,6 @@ std::istream& operator>>(std::istream& str, CSVRow& data)
  *          std::cout << "4th Element(" << row[3] << ")/n";
  *      }
  * }
+*/
+
+#endif // CSVROW
