@@ -8,10 +8,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
-    connect(ui->widget, SIGNAL(xRotationChanged(int)), ui->rotXSlider, SLOT(setValue(int)));
-    connect(ui->widget, SIGNAL(yRotationChanged(int)), ui->rotYSlider, SLOT(setValue(int)));
-    connect(ui->widget, SIGNAL(zRotationChanged(int)), ui->rotZSlider, SLOT(setValue(int)));
 }
 
 MainWindow::~MainWindow()

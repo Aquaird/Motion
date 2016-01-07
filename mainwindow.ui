@@ -14,136 +14,13 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>400</y>
-      <width>291</width>
-      <height>36</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QLabel" name="label">
-       <property name="text">
-        <string>xRot</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QSlider" name="rotXSlider">
-       <property name="maximum">
-        <number>360</number>
-       </property>
-       <property name="singleStep">
-        <number>16</number>
-       </property>
-       <property name="pageStep">
-        <number>15</number>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="tickPosition">
-        <enum>QSlider::TicksAbove</enum>
-       </property>
-       <property name="tickInterval">
-        <number>15</number>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>450</y>
-      <width>291</width>
-      <height>36</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_2">
-     <item>
-      <widget class="QLabel" name="label_2">
-       <property name="text">
-        <string>yRot</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QSlider" name="rotYSlider">
-       <property name="maximum">
-        <number>360</number>
-       </property>
-       <property name="singleStep">
-        <number>16</number>
-       </property>
-       <property name="pageStep">
-        <number>15</number>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="tickPosition">
-        <enum>QSlider::TicksAbove</enum>
-       </property>
-       <property name="tickInterval">
-        <number>15</number>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>500</y>
-      <width>291</width>
-      <height>36</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_3">
-     <item>
-      <widget class="QLabel" name="label_3">
-       <property name="text">
-        <string>zRot</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QSlider" name="rotZSlider">
-       <property name="maximum">
-        <number>360</number>
-       </property>
-       <property name="singleStep">
-        <number>16</number>
-       </property>
-       <property name="pageStep">
-        <number>15</number>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="tickPosition">
-        <enum>QSlider::TicksAbove</enum>
-       </property>
-       <property name="tickInterval">
-        <number>15</number>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
    <widget class="glwidget" name="widget" native="true">
     <property name="geometry">
      <rect>
       <x>20</x>
       <y>60</y>
-      <width>291</width>
-      <height>331</height>
+      <width>391</width>
+      <height>461</height>
      </rect>
     </property>
    </widget>
@@ -183,54 +60,5 @@
   </customwidget>
  </customwidgets>
  <resources/>
- <connections>
-  <connection>
-   <sender>rotXSlider</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>widget</receiver>
-   <slot>setXRotation(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>90</x>
-     <y>457</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>92</x>
-     <y>296</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>rotYSlider</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>widget</receiver>
-   <slot>setYRotation(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>162</x>
-     <y>497</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>155</x>
-     <y>387</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>rotZSlider</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>widget</receiver>
-   <slot>setZRotation(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>236</x>
-     <y>547</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>240</x>
-     <y>383</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

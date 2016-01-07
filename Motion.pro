@@ -5,7 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui opengl
-
+LIBS    +=  -lglut -lGLU
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = Motion
@@ -23,3 +23,6 @@ HEADERS  += mainwindow.h \
     glwidget.h
 
 FORMS    += mainwindow.ui
+
+DISTFILES += \
+    queries.csv

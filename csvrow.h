@@ -5,6 +5,9 @@
 
 
 #include "heads.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 
 class CSVRow
 {
@@ -25,11 +28,12 @@ public:
 
         std::stringstream lineStream(line);
         std::string cell;
-
+        float fcell;
         m_data.clear();
-        while(std::getline(lineStream, cell, ' ')) //by ' '
+        while(std::getline(lineStream, cell, ',')) //by ' '
         {
-            m_data.push_back(cell);
+            fcell = atof(cell.c_str());
+            m_data.push_back(fcell);
         }
     }
 private:

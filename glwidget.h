@@ -20,6 +20,7 @@ protected:
 
     QSize minimumSizeHint() const;
     QSize sizeHint() const;
+    void keyPressEvent(QKeyEvent *e);
     void mousePressEvent(QMouseEvent *e);
     void mouseMoveEvent(QMouseEvent *e);
 
@@ -37,10 +38,18 @@ signals:
 
 private:
     void draw();
-
+    void readData();
     int xRot;
     int yRot;
     int zRot;
+    double dataPoint[40][3];
+    GLfloat zoom;
+    //position
+    GLfloat ty;
+    GLfloat tz;
+    //rotate
+    GLfloat ry;
+    GLfloat rz;
 
     QPoint lastPos;
 };

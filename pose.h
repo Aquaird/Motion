@@ -3,14 +3,6 @@
 
 #include "heads.h"
 
-struct Posedata
-{
-    unsigned int item_num = 122;
-    unsigned int row_num = 1;
-    double _data[item_num];
-    unsigned int _index[row_num];
-};
-
 class Pose
 {
 private:
@@ -21,9 +13,9 @@ private:
 
 
 public:
-    double* getData()
+    double** getData()
     {
-        return this->data;
+        return (double **)this->data;
     }
     int getClipID()
     {
@@ -33,9 +25,9 @@ public:
     {
         return frameID;
     }
-    double* getnData()
+    double** getnData()
     {
-        return this->n_data;
+        return (double**)this->n_data;
     }
 
     void normalize(){
@@ -56,30 +48,30 @@ public:
         xAxi[2] = .0;
         for(int i=0; i<40; i++)
         {
-            this->n_data[0] = this->data[0] - midPoint[0];
-            this->n_data[1] = this->data[1] - midPoint[1];
-            this->n_data[2] = this->data[2] - midPoint[2];
+            this->n_data[i][0] = this->data[i][0] - midPoint[0];
+            this->n_data[i][1] = this->data[i][1] - midPoint[1];
+            this->n_data[i][2] = this->data[i][2] - midPoint[2];
 
             double tempx = this->n_data[i][0];
             double tempy = this->n_data[i][1];
             double cosx = xAxi[0]/sqrt(xAxi[0]*xAxi[0] + xAxi[1]*xAxi[1]);
             double sinx = xAxi[1]/sqrt(xAxi[0]*xAxi[0] + xAxi[1]*xAxi[1]);
 
-            this->n_data[0] = tempx*cosx + tempy*sinx;
-            this->n_data[1] = -tempx*sinx + tempy*cosx;
+            this->n_data[i][0] = tempx*cosx + tempy*sinx;
+            this->n_data[i][1] = -tempx*sinx + tempy*cosx;
             }
         }
 
-    void setData(double **rowData)
+    void setData(double *rowData)
     {
 
         memcpy(this->data, rowData, sizeof(double)*120);
-        this->clipID=rowData[121];
-        this->frameID=rowData[122];
+        this->clipID=(int)rowData[121];
+        this->frameID=(int)rowData[122];
 
     }
 
-    Pose(double **rowData)
+    Pose(double *rowData)
     {
         this->setData(rowData);
         this->normalize();
