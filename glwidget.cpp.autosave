@@ -54,6 +54,7 @@ QSize glwidget::minimumSizeHint() const
     return QSize(50,50);
 }
 
+
 QSize glwidget::sizeHint() const
 {
     return QSize(400,400);

@@ -37,12 +37,17 @@ signals:
     void zRotationChanged(int angle);
 
 private:
+    void drawAxi();
     void draw();
     void readData();
     int xRot;
     int yRot;
     int zRot;
     double dataPoint[40][3];
+    bool selected;
+    int pickedID;
+    unsigned int dragDirection;
+
     GLfloat zoom;
     //position
     GLfloat ty;
